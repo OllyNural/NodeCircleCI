@@ -1,0 +1,28 @@
+{
+  "name": "nodecircleci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=test node server.js",
+    "test": "NODE_ENV=test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OllyNural/NodeCircleCI.git"
+  },
+  "author": "Oliver Nural",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OllyNural/NodeCircleCI/issues"
+  },
+  "homepage": "https://github.com/OllyNural/NodeCircleCI#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "cypress": "^1.4.2",
+    "jest": "^22.2.2",
+    "supertest": "^3.0.0"
+  }
+}
