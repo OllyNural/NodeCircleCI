@@ -1,4 +1,4 @@
-const maths = require('../../src/maths')
+const maths = require('./maths')
 
 // Why, what better way to test that a random number is random
 // Than to generate another random one and check equality is the same!

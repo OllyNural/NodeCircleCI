@@ -1,5 +1,5 @@
 const request = require('supertest')
-const app = require('../../src/app')
+const app = require('./app')
 
 describe('Our maths endpoint should return correct randomNumber', () => {
     test('Should health check status 200', async () => {
