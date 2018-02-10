@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=test node server.js",
-    "test": "NODE_ENV=test jest"
+    "start": "node server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "express": "^4.16.2"
   },
   "devDependencies": {
-    "jest": "^22.2.2",
+    "jest": "^22.1.4",
     "supertest": "^3.0.0"
   }
 }
