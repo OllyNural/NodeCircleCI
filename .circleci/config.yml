@@ -20,13 +20,18 @@ jobs:
     steps:
       - run: |
           sudo apt-get update -q
+          # Install python3 and pip3
           sudo apt-get install python3
           sudo apt-get install python3-pip
-          # sudo curl -O https://bootstrap.pypa.io/get-pip.py
-          # python get-pip.py --user
-          pip3 --version
+          # Install awscli using pip3
           sudo pip3 install awscli --upgrade --user
-          sudo aws --version
+          which python
+          which python3
+          ls -al /usr/local/bin/python
+          echo $PATH
+          export PATH=~/.local/bin:$PATH
+          echo $PATH
+          aws --version
 workflows:
   version: 2
   build-test-and-deploy:
