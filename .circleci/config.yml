@@ -1,6 +1,7 @@
 # Javascript Node CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#- image: 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci
 #
 version: 2
 jobs:
@@ -12,20 +13,21 @@ jobs:
     steps:
       - checkout
       - run: npm install
-    
-  test:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:8.9.0
-
-    steps:
-      - checkout
       - run: npm test
+  deploy:
+    docker:
+      - image: circleci/node:8.9.0
+    steps:
+      - run: |
+          apt-get update -q
+          apt install python3-pip
+          pip install awscli --upgrade --user
+          aws --version
 workflows:
   version: 2
   build-test-and-deploy:
     jobs:
       - build
-      - test:
+      - deploy:
           requires:
             - build
