@@ -20,7 +20,11 @@ jobs:
     steps:
       - run: |
           sudo apt-get update -q
-          sudo apt install python3-pip
+          sudo apt-get install python3
+          sudo curl -O https://bootstrap.pypa.io/get-pip.py
+          python get-pip.py --user
+          pip --version
+          # sudo apt-get install python3-pip
           sudo pip install awscli --upgrade --user
           sudo aws --version
 workflows:
