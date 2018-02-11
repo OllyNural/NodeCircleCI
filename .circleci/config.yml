@@ -18,6 +18,7 @@ jobs:
     docker:
       - image: circleci/node:8.9.0
     steps:
+      - checkout
       - run: |
 
 
@@ -36,7 +37,7 @@ jobs:
 
           aws_login=`aws ecr get-login --no-include-email --region eu-west-2`
           echo $aws_login
-          ls
+          npm install
           docker build -t nodecircleci .
           docker tag nodecircleci:latest 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
           docker push 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
