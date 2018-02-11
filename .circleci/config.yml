@@ -15,8 +15,7 @@ jobs:
       - run: npm install
       - run: npm test
   deploy:
-    docker:
-      machine: true
+    machine: true
     steps:
       - checkout
       - run: |
