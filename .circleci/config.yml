@@ -27,7 +27,7 @@ jobs:
           sudo pip3 install awscli --upgrade --user
           which python
           which python3
-          ls -al /usr/local/bin/python
+          ls -al /usr/bin/python
           echo $PATH
           export PATH=~/.local/bin:$PATH
           echo $PATH
