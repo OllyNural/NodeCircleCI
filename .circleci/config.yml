@@ -31,8 +31,10 @@ jobs:
 
 
 
-          sudo apt-get -y -qq update
-          sudo apt-get -y -qq install python
+          # sudo apt-get -y -qq update
+          # sudo apt-get -y -qq install python
+
+          sudo apt-get update && apt-get install -y python-pip libpython-dev
           curl -O https://bootstrap.pypa.io/get-pip.py
           python get-pip.py --user
           export PATH=~/.local/bin:$PATH
