@@ -29,7 +29,7 @@ jobs:
           which python3
           sudo ls -al /usr/bin/python3
           echo $PATH
-          export PATH=~python3.4:$PATH
+          export PATH=python3.4:$PATH
           echo $PATH
           aws --version
 workflows:
