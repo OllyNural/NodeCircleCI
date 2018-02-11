@@ -45,6 +45,7 @@ jobs:
           sudo ls -al /usr/bin/python
           echo $PATH
           export PATH=/usr/bin/python/bin:$PATH
+          export PATH=python2.7/bin:$PATH
           echo $PATH
           aws --version
 
