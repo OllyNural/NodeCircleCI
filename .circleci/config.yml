@@ -22,8 +22,8 @@ jobs:
 
 
           sudo apt-get update -q
-          sudo apt-get install python3
-          cd /tmp
+          sudo apt-get install python
+          # cd /tmp
           curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
           unzip awscli-bundle.zip
           sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
