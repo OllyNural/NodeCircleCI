@@ -27,9 +27,9 @@ jobs:
           sudo pip3 install awscli --upgrade --user
           which python
           which python3
-          ls -al /usr/bin/python
+          ls -al /usr/bin/python3
           echo $PATH
-          export PATH=~/.local/bin:$PATH
+          export PATH=~/usr/bin/python3:$PATH
           echo $PATH
           aws --version
 workflows:
