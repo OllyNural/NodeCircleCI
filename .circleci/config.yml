@@ -38,9 +38,10 @@ jobs:
           aws_login=`aws ecr get-login --no-include-email --region eu-west-2`
           echo $aws_login
           npm install
+
           sudo docker build -t nodecircleci .
-          sudo docker tag nodecircleci:latest 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
-          sudo docker push 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
+          # sudo docker tag nodecircleci:latest 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
+          # sudo docker push 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
 
 
           # sudo apt-get -y -qq update
