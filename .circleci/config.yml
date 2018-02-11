@@ -23,31 +23,36 @@ jobs:
 
           # sudo apt-get update -q
           # sudo apt-get install python
-          # python --version
           # cd /tmp
           # curl "https://s3.amazonaws.com/aws-cli/awscli-bundle-1.11.18.zip" -o "awscli-bundle.zip"
           # unzip awscli-bundle.zip
           # sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+          sudo apt-get update
+          sudo apt-get -y install unzip python2.7 curl libpython-dev
+          curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+          unzip awscli-bundle.zip
+          ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 
 
           # sudo apt-get -y -qq update
           # sudo apt-get -y -qq install python
 
-          sudo apt-get update && sudo apt-get install -y python-pip libpython-dev
+          # sudo apt-get update && sudo apt-get install -y python-pip libpython-dev
           # curl -O https://bootstrap.pypa.io/get-pip.py
           # python get-pip.py --user
           # export PATH=~/.local/bin:$PATH
           # echo $PATH
           #pip3 install awscli --upgrade --user
-          pip install awscli --upgrade --user
-          which python
-          sudo ls -al /usr/bin/python
-          echo $PATH
-          export PATH=/usr/bin/python/bin:$PATH
-          export PATH=python2.7/bin:$PATH
-          echo $PATH
-          aws --version
+          # pip install awscli --upgrade --user
+          # which python
+          # sudo ls -al /usr/bin/python
+          # echo $PATH
+          # export PATH=/usr/bin/python/bin:$PATH
+          # export PATH=python2.7/bin:$PATH
+          # echo $PATH
+          # aws --version
 
 
           # sudo apt-get update -q
