@@ -21,16 +21,22 @@ jobs:
       - run: |
 
 
+          sudo apt-get update -q
+          sudo apt-get install python3
+          curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+          unzip awscli-bundle.zip
+          sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 
-          sudo apt-get -y -qq update
-          sudo apt-get -y -qq install python3
-          curl -O https://bootstrap.pypa.io/get-pip.py
-          python3 get-pip.py --user
-          export PATH=~/.local/bin:$PATH
-          #pip3 install awscli --upgrade --user
-          pip install awscli --upgrade --user
-          aws --version
+
+          # sudo apt-get -y -qq update
+          # sudo apt-get -y -qq install python3
+          # curl -O https://bootstrap.pypa.io/get-pip.py
+          # python3 get-pip.py --user
+          # export PATH=~/.local/bin:$PATH
+          # #pip3 install awscli --upgrade --user
+          # pip install awscli --upgrade --user
+          # aws --version
 
 
           # sudo apt-get update -q
