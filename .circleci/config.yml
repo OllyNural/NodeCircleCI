@@ -27,7 +27,7 @@ jobs:
           sudo apt-get -y -qq install python3.4-dev
           curl -O https://bootstrap.pypa.io/get-pip.py
           sudo python3.4 get-pip.py --user
-          sudo export PATH=~/.local/bin:$PATH
+          export PATH=~/.local/bin:$PATH
           sudo pip3 install awscli --upgrade --user
           sudo pip install awscli --upgrade --user
           aws --version
