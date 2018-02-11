@@ -44,7 +44,7 @@ jobs:
           which python
           sudo ls -al /usr/bin/python
           echo $PATH
-          export PATH=/usr/bin/python:$PATH
+          export PATH=/usr/bin/python/bin:$PATH
           echo $PATH
           aws --version
 
