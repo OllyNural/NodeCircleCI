@@ -23,6 +23,7 @@ jobs:
 
           sudo apt-get update -q
           sudo apt-get install python
+          python --version
           cd /tmp
           curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
           unzip awscli-bundle.zip
