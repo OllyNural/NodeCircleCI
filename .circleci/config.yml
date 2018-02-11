@@ -35,7 +35,7 @@ jobs:
           sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
           aws_login=`aws ecr get-login --no-include-email --region eu-west-2`
-          echo $aws_login
+          eval $aws_login
           npm install
 
           sudo docker build -t nodecircleci .
