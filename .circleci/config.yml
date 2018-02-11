@@ -33,10 +33,10 @@ jobs:
           curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
           unzip awscli-bundle.zip
           sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-          aws --version
 
           aws_login=`aws ecr get-login --no-include-email --region eu-west-2`
           echo $aws_login
+          ls
           docker build -t nodecircleci .
           docker tag nodecircleci:latest 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
           docker push 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
