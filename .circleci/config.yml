@@ -19,60 +19,22 @@ jobs:
     steps:
       - checkout
       - run: |
-
-          # sudo apt-get update -q
-          # sudo apt-get install python
-          # cd /tmp
-          # curl "https://s3.amazonaws.com/aws-cli/awscli-bundle-1.11.18.zip" -o "awscli-bundle.zip"
-          # unzip awscli-bundle.zip
-          # sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-
+          #Get all pre-requisites
           sudo apt-get update
           sudo apt-get -y install unzip python2.7 curl libpython-dev
           curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
           unzip awscli-bundle.zip
           sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
+          # Login to ecr and docker login
           aws_login=`aws ecr get-login --no-include-email --region eu-west-2`
           eval $aws_login
 
+          # Docker build, tag and push
           sudo docker build -t nodecircleci .
           sudo docker tag nodecircleci:latest 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
           sudo docker push 257200663051.dkr.ecr.eu-west-2.amazonaws.com/nodecircleci:latest
 
-
-          # sudo apt-get -y -qq update
-          # sudo apt-get -y -qq install python
-
-          # sudo apt-get update && sudo apt-get install -y python-pip libpython-dev
-          # curl -O https://bootstrap.pypa.io/get-pip.py
-          # python get-pip.py --user
-          # export PATH=~/.local/bin:$PATH
-          # echo $PATH
-          #pip3 install awscli --upgrade --user
-          # pip install awscli --upgrade --user
-          # which python
-          # sudo ls -al /usr/bin/python
-          # echo $PATH
-          # export PATH=/usr/bin/python/bin:$PATH
-          # export PATH=python2.7/bin:$PATH
-          # echo $PATH
-          # aws --version
-
-
-          # sudo apt-get update -q
-          # # Install python3 and pip3
-          # sudo apt-get install python3
-          # sudo apt-get install python3-pip
-          # # Install awscli using pip3
-          # sudo pip3 install awscli --upgrade --user
-          # which python
-          # which python3
-          # sudo ls -al /usr/bin/python3
-          # echo $PATH
-          # export PATH=python3.4:$PATH
-          # echo $PATH
-          # aws --version
 workflows:
   version: 2
   build-test-and-deploy:

@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/OllyNural/NodeCircleCI#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4"
   },
   "devDependencies": {
     "jest": "22.1.4",
